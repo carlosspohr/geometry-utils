@@ -1,2 +1,5 @@
-*.jar
+#somente os jars do geotools.
+gt*.jar
+jts*.jar
+
 lib/**/*
