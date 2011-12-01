@@ -1,0 +1,10 @@
+A easy way to convert geometry objects abstracting Geotools library. Sample:
+
+Point p = new GeometryUtils().from("POINT(30 10)").withProjection(4326).to(Point.class);
+
+//or
+
+Point p = new GeometryUtils().from(30, 10).withProjection(4326).to(Point.class);
+
+//or
+Polygon p = new GeometryUtils().from("POLYGON(30 10)").to(Polygon.class);
