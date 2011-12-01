@@ -29,7 +29,10 @@ public class WKTConversionTest
 	{
 		GeometryUtils geo = new GeometryUtils();
 		
-		MultiPolygon pol = geo.from("MULTIPOLYGON (((40 40, 20 45, 45 30, 40 40)),((20 35, 45 20, 30 5, 10 10, 10 30, 20 35),(30 20, 20 25, 20 15, 30 20)))").convertTo(MultiPolygon.class);
+		MultiPolygon pol = geo
+				.from("MULTIPOLYGON (((40 40, 20 45, 45 30, 40 40)),((20 35, 45 20, 30 5, 10 10, 10 30, 20 35),(30 20, 20 25, 20 15, 30 20)))")
+				.withProjection(4326)
+				.convertTo(MultiPolygon.class);
 		
 		assertNotNull(pol);
 	}
@@ -39,7 +42,9 @@ public class WKTConversionTest
 	{
 		GeometryUtils geo = new GeometryUtils();
 		
-		MultiLineString line = geo.from("MULTILINESTRING ((10 10, 20 20, 10 40),(40 40, 30 30, 40 20, 30 10))").convertTo(MultiLineString.class);
+		MultiLineString line = geo
+				.from("MULTILINESTRING ((10 10, 20 20, 10 40),(40 40, 30 30, 40 20, 30 10))")
+				.convertTo(MultiLineString.class);
 		
 		assertNotNull(line);
 	}
@@ -49,7 +54,9 @@ public class WKTConversionTest
 	{
 		GeometryUtils geo = new GeometryUtils();
 		
-		LineString line = geo.from("LINESTRING (30 10, 10 30, 40 40)").convertTo(LineString.class);
+		LineString line = geo
+				.from("LINESTRING (30 10, 10 30, 40 40)")
+				.convertTo(LineString.class);
 		
 		assertNotNull(line);
 	}
